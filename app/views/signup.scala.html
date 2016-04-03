@@ -2,7 +2,7 @@
  * This template takes a single argument, a String containing a
  * メッセージの表示を行います
  *@
-@(message: String)
+@(message: String, userForm: Form[User])
 
 @*
  * Call the the `main` template with two arguments. The first
@@ -11,5 +11,11 @@
  *@
 @main("Welcome to Play") {
 	<h1>Hello</h1>
-	<p>@message</p>
+	
+	@helper.form(action = routes.UserController.create()){
+		@helper.inputText(userForm("name"), '_label -> "ユーザ名")
+		@helper.inputPassword(userForm("password"), '_label -> "パスワード")
+		
+		<input type="submit">
+	}
 }
