@@ -1,0 +1,20 @@
+@*
+ * This template takes a single argument, a String containing a
+ * メッセージの表示を行います
+ *@
+@(questionList: List[Question])
+
+@*
+ * Call the the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("質問一覧") {
+	<h1>質問一覧</h1>
+	
+	@if(!questionList.isEmpty()) {
+		@for(question <- questionList) {
+			<li>@question.title</li>
+		}
+	}
+}

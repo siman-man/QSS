@@ -31,6 +31,11 @@ public class Question extends Model {
 	public String content;
 	
 	/**
+	 * ステータス
+	 */
+	public String status;
+	
+	/**
 	 * 作成日
 	 */
 	@CreatedTimestamp

@@ -1,0 +1,22 @@
+@*
+ * This template takes a single argument, a String containing a
+ * メッセージの表示を行います
+ *@
+@(message: String, questionForm: Form[Question])
+
+@*
+ * Call the the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Play") {
+	<h1>Hello</h1>
+	
+	@helper.form(action = routes.QuestionController.create(), 'class -> "pure-form pure-form-aligned"){
+		<fieldset>
+			@helper.inputText(questionForm("title"), '_label -> "タイトル", 'class -> "pure-control-group")
+			@helper.inputText(questionForm("content"), '_label -> "質問内容", 'class -> "pure-control-group")
+			<input type="submit">
+		</fieldset>
+	}
+}
