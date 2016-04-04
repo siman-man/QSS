@@ -10,13 +10,26 @@
  * argument is an `Html` object containing the body of the page.
  *@
 @main("Welcome to Play") {
-	<h1>Hello</h1>
-	
-	@helper.form(action = routes.QuestionController.create(), 'class -> "pure-form pure-form-aligned"){
-		<fieldset>
-			@helper.inputText(questionForm("title"), '_label -> "タイトル", 'class -> "pure-control-group")
-			@helper.inputText(questionForm("content"), '_label -> "質問内容", 'class -> "pure-control-group")
-			<input type="submit">
-		</fieldset>
-	}
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+	<script src="@routes.Assets.versioned("javascripts/editor.js")" type="text/javascript"></script>
+
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/question.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/github.css")">
+
+	<div class="content">
+		@helper.form(action = routes.QuestionController.create(), 'class -> "pure-form pure-g"){
+    		<div class="pure-u-11-24">
+				<input type="text" name="title" id="title" class="pure-input-1" placeholder="タイトル">
+        		<textarea id="editor" name="content" class="pure-input-1" placeholder="質問内容を入力してください"></textarea>
+				<input type="submit" class="pure-button pure-input-1-4 pure-button-primary" value="送信">
+    		</div>
+
+    		<div class="pure-u-11-24">
+    			<h1 id="preview-title"></h1>
+    			<div id="preview"></div>
+    		</div>
+    	}
+	</div>
 }

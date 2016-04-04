@@ -1,0 +1,15 @@
+div {
+    padding: 0.25em;
+    margin: 0 auto;
+}
+
+.content {
+	margin-top: 100px;
+}
+
+textarea {
+	resize: vertical;
+	height: 400px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

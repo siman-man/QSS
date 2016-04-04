@@ -9,6 +9,7 @@
  * Most of these are inherited from Base, but I want to change a few.
  */
 body {
+	font-family: Helvetica, arial, sans-serif;
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
@@ -67,10 +68,8 @@ a.pure-button-primary {
  */
 
 .banner {
-    background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
     text-align: center;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
 
     height: 200px;
     width: 100%;
@@ -96,14 +95,16 @@ a.pure-button-primary {
 .home-menu {
     padding: 0.5em;
     padding-left: 2.5em;
-    padding-right: 3.5em;
+    padding-right: 3.0em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
+
 .home-menu {
     background: #2d3e50;
 }
-.pure-menu.pure-menu-fixed {
+
+.pure-menu .pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
     border-bottom: none;
     /* I need a higher z-index here because of the scroll-over effect. */
@@ -121,8 +122,9 @@ a.pure-button-primary {
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: white;
 }
+
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;

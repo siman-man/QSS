@@ -4,6 +4,8 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+GET     /login                      controllers.HomeController.login
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
@@ -12,6 +14,7 @@ GET     /message                    controllers.AsyncController.message
 GET     /signup                     controllers.UserController.signup
 POST    /users/create               controllers.UserController.create
 GET     /users                      controllers.UserController.users
+
 # question controller
 GET     /questions                  controllers.QuestionController.questions 
 GET     /questions/input            controllers.QuestionController.input

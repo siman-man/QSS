@@ -15,6 +15,7 @@
 	@if(!questionList.isEmpty()) {
 		@for(question <- questionList) {
 			<li>@question.title</li>
+			<div>@question.content</div>
 		}
 	}
 }

@@ -13,7 +13,7 @@
 	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/form.css")">
 
 	<div class="content">
-		@helper.form(action = routes.UserController.create(), 'class -> "pure-form"){
+		@helper.form(action = routes.HomeController.login(), 'class -> "pure-form"){
 			<fieldset>
 				<div class="pure-control-group">
             		<input id="name" name="name" class="pure-input-1-4" type="text" placeholder="ユーザ名">
@@ -24,7 +24,7 @@
 				</div>
 		
 				<div class="pure-controls">
-					<input type="submit" class="pure-button pure-input-1-4 pure-button-primary" value="登録">
+					<input type="submit" class="pure-button pure-input-1-4 pure-button-primary" value="ログイン">
 				</div>
 			</fieldset>
 		}
