@@ -2,17 +2,20 @@
  * This template takes a single argument, a String containing a
  * メッセージの表示を行います
  *@
-@(userList: List[User])
+@(question: Question)
 
 @*
  * Call the the `main` template with two arguments. The first
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
  *@
-@main("ユーザ一覧") {
-	<h1>ユーザ一覧</h1>
-	
-	@for(user <- userList) {
-		<li>@user.name</li>
-	}
+@main("質問内容") {
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
+
+	<div class="content">
+		<div class="question-box">
+			<div>@question.title</div>
+			<div>@question.content</div>
+		</div>
+	</div>
 }

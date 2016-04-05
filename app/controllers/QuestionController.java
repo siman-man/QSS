@@ -7,12 +7,12 @@ import javax.inject.Inject;
 import com.avaje.ebean.Model;
 
 import models.Question;
-import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.input;
+import views.html.board;
 import views.html.questions;
 
 
@@ -39,6 +39,11 @@ public class QuestionController extends Controller {
 
 	public Result input() {
 		return ok(input.render("hello", formFactory.form(Question.class)));
+	}
+	
+	public Result show(Long id) {
+		Question question = find.byId(id);
+		return ok(board.render(question));
 	}
 	
 	public Result questions() {

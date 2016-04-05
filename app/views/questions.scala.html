@@ -10,12 +10,21 @@
  * argument is an `Html` object containing the body of the page.
  *@
 @main("質問一覧") {
-	<h1>質問一覧</h1>
-	
-	@if(!questionList.isEmpty()) {
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
+
+	<div class="content">
+		<div class="pure-menu pure-menu-horizontal">
+   			<ul class="pure-menu-list">
+        		<li class="pure-menu-item"><a href="#" class="pure-menu-link">新着</a></li>
+        		<li class="pure-menu-item"><a href="#" class="pure-menu-link">未回答</a></li>
+        		<li class="pure-menu-item"><a href="#" class="pure-menu-link">未解決</a></li>
+        		<li class="pure-menu-item"><a href="#" class="pure-menu-link">解決済</a></li>
+    		</ul>
+		</div>
 		@for(question <- questionList) {
-			<li>@question.title</li>
-			<div>@question.content</div>
+			<div class="question-box">
+				<div><a href="@routes.QuestionController.show(question.id)">@question.title</a></div>
+			</div>
 		}
-	}
+	</div>
 }
